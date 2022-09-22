@@ -29,6 +29,10 @@ const Home: NextPage = () => {
 
   if (!windowSize.height) return <div></div>;
 
+  if (windowSize.width < 800) {
+    return <div>Mobile Version is not available..!!</div>;
+  }
+
   return (
     <MotionWrapper>
       <Container>

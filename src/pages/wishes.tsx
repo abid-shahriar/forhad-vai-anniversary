@@ -1,10 +1,28 @@
 import type { NextPage } from 'next';
+import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 import { Card } from '../components/Card';
 import MotionWrapper from '../framer-motion/MotionWrapper';
 
 const Wishes: NextPage = () => {
+  const [windowSize, setWindowSize] = useState({
+    width: 0,
+    height: 0
+  });
+
+  useEffect(() => {
+    setWindowSize({
+      width: window.innerWidth,
+      height: window.innerHeight
+    });
+  }, []);
+
+  if (!windowSize.height) return <div></div>;
+
+  if (windowSize.width < 800) {
+    return <div>Mobile Version is not available..!!</div>;
+  }
   return (
     <MotionWrapper>
       <Container>
