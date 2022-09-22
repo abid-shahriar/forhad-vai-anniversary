@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import styled from 'styled-components';
-// import Confetti from 'react-confetti';
+import Confetti from 'react-confetti';
 import { useEffect, useState } from 'react';
 import Typewriter from 'typewriter-effect';
 import Link from 'next/link';
@@ -24,7 +24,7 @@ const Home: NextPage = () => {
   return (
     <MotionWrapper>
       <Container>
-        {/* <Confetti width={windowSize.width} height={windowSize.height} numberOfPieces={700} recycle={true} /> */}
+        <Confetti width={windowSize.width} height={windowSize.height} numberOfPieces={700} recycle={true} />
 
         <ContentContainer>
           <AnniversaryText>
@@ -41,7 +41,7 @@ const Home: NextPage = () => {
             </div>
           </AnniversaryText>
           <Link href='/wishes'>
-            <Button>&gt;</Button>
+            <Button>our wishes</Button>
           </Link>
         </ContentContainer>
       </Container>
@@ -52,7 +52,6 @@ const Home: NextPage = () => {
 export default Home;
 
 const Container = styled.div`
-  width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -60,10 +59,12 @@ const Container = styled.div`
   position: relative;
   isolation: isolate;
   max-width: 1200px;
+  margin: 0 auto;
 
   canvas {
+    position: fixed !important;
     opacity: 0.8;
-    z-index: -1;
+    z-index: -1 !important;
   }
 `;
 
@@ -88,13 +89,11 @@ const Button = styled.a`
   appearance: none;
   border: none;
   background: rgba(255, 255, 255, 0.73);
-  color: rgba(255, 255, 255, 0.8);
-  height: 80px;
-  width: 80px;
-  border-radius: 50%;
-  font-size: 40px;
+  color: rgba(82, 82, 82, 0.8);
+  border-radius: 50px;
+  font-size: 20px;
   font-weight: bolder;
-  padding: 10px;
+  padding: 10px 30px;
   cursor: pointer;
   position: absolute;
   bottom: 10rem;
@@ -107,7 +106,7 @@ const Button = styled.a`
 
   :hover {
     background: rgba(255, 255, 255, 0.93);
-    color: rgba(125, 125, 125, 0.769);
+    color: rgba(82, 82, 82, 0.9);
   }
 
   @keyframes bounce {
