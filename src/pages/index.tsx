@@ -12,6 +12,14 @@ const Home: NextPage = () => {
     height: 0
   });
 
+  const [mountMainContent, setMountMainContent] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setMountMainContent(true);
+    }, 1500);
+  }, []);
+
   useEffect(() => {
     setWindowSize({
       width: window.innerWidth,
@@ -26,24 +34,26 @@ const Home: NextPage = () => {
       <Container>
         <Confetti width={windowSize.width} height={windowSize.height} numberOfPieces={700} recycle={true} />
 
-        <ContentContainer>
-          <AnniversaryText>
-            <div className='text'>
-              <Typewriter
-                options={{
-                  strings: ['Happy One Year <br/> Anniversary!'],
-                  autoStart: true,
-                  deleteSpeed: 1000000000,
-                  delay: 100,
-                  loop: false
-                }}
-              />
-            </div>
-          </AnniversaryText>
-          <Link href='/wishes'>
-            <Button>our wishes</Button>
-          </Link>
-        </ContentContainer>
+        {mountMainContent && (
+          <ContentContainer>
+            <AnniversaryText>
+              <div className='text'>
+                <Typewriter
+                  options={{
+                    strings: ['Happy One Year <br/> Anniversary!'],
+                    autoStart: true,
+                    deleteSpeed: 1000000000,
+                    delay: 100,
+                    loop: false
+                  }}
+                />
+              </div>
+            </AnniversaryText>
+            <Link href='/wishes'>
+              <Button>our wishes</Button>
+            </Link>
+          </ContentContainer>
+        )}
       </Container>
     </MotionWrapper>
   );
@@ -64,7 +74,7 @@ const Container = styled.div`
   canvas {
     position: fixed !important;
     opacity: 0.8;
-    z-index: -1 !important;
+    z-index: -2 !important;
   }
 `;
 

@@ -28,6 +28,7 @@ const Container = styled.div`
   padding: 20px;
   overflow-y: scroll;
   overflow-x: hidden;
+  backdrop-filter: blur(5px);
 
   &::-webkit-scrollbar {
     width: 0px;
