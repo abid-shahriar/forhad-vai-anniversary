@@ -6,7 +6,6 @@ export const Card = () => {
   return (
     <Container>
       <ImgContainer>
-        {/* <Image src='./forhad.png' alt='forhad' /> */}
         <ImageBox />
       </ImgContainer>
       <CommentContainer>
