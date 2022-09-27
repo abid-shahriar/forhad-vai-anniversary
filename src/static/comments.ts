@@ -15,7 +15,7 @@ export const comments = [
     id: 3,
     name: 'Ahnaf Abir',
     comment:
-      'Finding a co-worker like you is a matter of pride. Your positive attitude towards work inspires me here to give my best. It&apos;s your one year work anniversary, and I am very thankful for having you with us. Happy Work Anniversary.'
+      "Finding a co-worker like you is a matter of pride. Your positive attitude towards work inspires me here to give my best. It's your one year work anniversary, and I am very thankful for having you with us. Happy Work Anniversary."
   },
 
   {
@@ -27,6 +27,6 @@ export const comments = [
   {
     id: 5,
     name: 'Soptorshi Biswas',
-    comment: 'Congratulations on your work anniversary! You are a significant part of a team, and we can&apos;t imagine our workplace without you.'
+    comment: "Congratulations on your work anniversary! You are a significant part of a team, and we can't imagine our workplace without you."
   }
 ];
